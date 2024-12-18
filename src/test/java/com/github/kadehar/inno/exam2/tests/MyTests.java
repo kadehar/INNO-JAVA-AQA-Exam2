@@ -3,6 +3,7 @@ package com.github.kadehar.inno.exam2.tests;
 import com.github.kadehar.inno.exam2.extensions.ReportExtension;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,11 +17,18 @@ public class MyTests {
 
     @Test
     @Disabled
+    @DisplayName("Disabled test")
     void disabledTest() {}
+
+    @ParameterizedTest(name = "My parametrized test")
+    @MethodSource("provideArgs")
+    void successfulTest(int actual, int expected) {
+        Assertions.assertEquals(expected, actual);
+    }
 
     @ParameterizedTest
     @MethodSource("provideArgs")
-    void successfulTest(int actual, int expected) {
+    void successfulTest2(int actual, int expected) {
         Assertions.assertEquals(expected, actual);
     }
 
