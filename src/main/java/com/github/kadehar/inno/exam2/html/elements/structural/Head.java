@@ -24,4 +24,9 @@ public class Head extends Element {
         add(new Style(styleContent));
         return this;
     }
+
+    public Head meta() {
+        add(new Meta());
+        return this;
+    }
 }

@@ -1,4 +1,4 @@
-package com.github.kadehar.inno.exam2.extensions;
+package com.github.kadehar.inno.exam2.utils;
 
 import com.github.kadehar.inno.exam2.html.elements.base.Table;
 import org.junit.jupiter.api.DisplayName;
@@ -9,7 +9,7 @@ import org.junit.platform.commons.support.AnnotationSupport;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class ReportData {
+public class ReportUtils {
     public static Table createTestMethodsTable(List<Table.Row> rows) {
         Table table = new Table();
         table.row(new Table.Row().header("Method").header("Status"));

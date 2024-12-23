@@ -1,4 +1,4 @@
-package com.github.kadehar.inno.exam2.extensions;
+package com.github.kadehar.inno.exam2.utils;
 
 public enum TestStatus {
     Passed,

@@ -5,6 +5,11 @@ plugins {
 group 'github.com.kadehar'
 version '1.0'
 
+def jacksonVersion = '2.15.1'
+def junitVersion = '5.11.4'
+def assertjVersion = '3.27.0'
+def fakerVersion = '1.0.2'
+
 repositories {
     mavenCentral()
 }
@@ -14,7 +19,13 @@ compileTestJava {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.junit.platform:junit-platform-launcher:1.11.4",
+            "org.assertj:assertj-core:$assertjVersion",
+            "com.github.javafaker:javafaker:$fakerVersion"
+    )
 }
 
 tasks.test {

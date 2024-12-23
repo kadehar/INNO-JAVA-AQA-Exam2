@@ -8,6 +8,7 @@ public abstract class Element {
     protected List<Element> children = new ArrayList<>();
     protected String content;
     protected String cssFileLink;
+    protected String metaTag;
 
     protected Element(String tagName) {
         this.tagName = tagName;
@@ -35,6 +36,9 @@ public abstract class Element {
         }
         if (cssFileLink != null) {
             builder.append(cssFileLink);
+        }
+        if (metaTag != null) {
+            builder.append(metaTag);
         }
         if (content != null) {
             builder.append(content);
